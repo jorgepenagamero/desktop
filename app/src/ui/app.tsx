@@ -153,6 +153,8 @@ export class App extends React.Component<IAppProps, IAppState> {
 
           requestIdleCallback(() => {
             this.performDeferredLaunchActions()
+
+            updateStore._fakeUpdateReady()
           })
         },
         { timeout: ReadyDelay }
@@ -189,10 +191,10 @@ export class App extends React.Component<IAppProps, IAppState> {
       const status = state.status
 
       if (
-        !(
-          __RELEASE_CHANNEL__ === 'development' ||
-          __RELEASE_CHANNEL__ === 'test'
-        ) &&
+        // !(
+        //   __RELEASE_CHANNEL__ === 'development' ||
+        //   __RELEASE_CHANNEL__ === 'test'
+        // ) &&
         status === UpdateStatus.UpdateReady
       ) {
         this.props.dispatcher.setUpdateBannerVisibility(true)

@@ -185,6 +185,13 @@ class UpdateStore {
     sendWillQuitSync()
     autoUpdater.quitAndInstall()
   }
+
+  // HACK: remove this before merging, plz
+  public async _fakeUpdateReady() {
+    this.newRelease = await generateReleaseSummary()
+    this.status = UpdateStatus.UpdateReady
+    this.emitDidChange()
+  }
 }
 
 /** The store which contains the current state of the auto updater. */
