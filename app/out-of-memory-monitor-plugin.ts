@@ -1,7 +1,7 @@
 import * as webpack from 'webpack'
 import * as Path from 'path'
 
-let OutOfMemoryMonitor = function() {}
+const OutOfMemoryMonitor = function() {}
 
 OutOfMemoryMonitor.prototype.apply = function(compiler: webpack.Compiler) {
   compiler.hooks.beforeRun.tap(
