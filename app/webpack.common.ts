@@ -5,6 +5,7 @@ import * as webpack from 'webpack'
 import * as merge from 'webpack-merge'
 import { getReleaseChannel } from '../script/dist-info'
 import { getReplacements } from './app-info'
+const OutOfMemoryMonitor = require('./out-of-memory-monitor-plugin')
 
 const channel = getReleaseChannel()
 
@@ -49,6 +50,7 @@ const commonConfig: webpack.Configuration = {
     ],
   },
   plugins: [
+    new OutOfMemoryMonitor(),
     new CleanWebpackPlugin([outputDir], { verbose: false }),
     // This saves us a bunch of bytes by pruning locales (which we don't use)
     // from moment.

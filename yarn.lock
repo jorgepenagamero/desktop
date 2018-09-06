@@ -414,7 +414,7 @@
   dependencies:
     "@types/webpack" "*"
 
-"@types/webpack@*", webpack@^4.17.2:
+"@types/webpack@*", "webpack@^4.17.2":
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.17.2.tgz#49feb20205bd15f0a5f1fe0a12097d5d9931878d"
   dependencies:
