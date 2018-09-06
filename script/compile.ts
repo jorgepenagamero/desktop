@@ -16,7 +16,7 @@ const configPath =
 
 const args = [
   '--inspect',
-  './node_modules/.bin/parallel-webpack',
+  './node_modules/parallel-webpack/bin/run.js',
   '--config',
   configPath,
 ]
