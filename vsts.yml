@@ -20,6 +20,11 @@ phases:
       - script: |
           yarn test:setup && yarn test
         name: Test
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathtoPublish: '**/*.heapsnapshot'
+          artifactName: 'heap-dumps'
+        condition: succeededOrFailed()
 
   - phase: Linux
     queue: Hosted Linux Preview
