@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Categoria{
+
+	String nom_categoria;
+	String id_categoria;
+	String desc_categoria;
+
+	@Override
+	public String toString(){
+		return "la Categoria de:"+ nom_categoria + 
+				"con id:  "+ id_categoria + 
+				"y descripcion " + desc_categoria ;
+	}
+
+	public static Categoria crearCategoria(){
+		Scanner read = new Scanner(System.in);
+		Categoria c = new Categoria();
+
+		System.out.println("Ingresar nombre de Categoria");
+		c.nom_categoria = read.nextLine();
+		System.out.println("Ingresar id de Categoria");
+		c.id_categoria = read.nextLine();
+		System.out.println("Ingresar Descripcion de Categoria");
+		c.desc_categoria = read.nextLine();
+		return c;			
+	}
+
+	public static Categoria modCategoria(){
+		
+	}
+}
